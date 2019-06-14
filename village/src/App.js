@@ -6,6 +6,7 @@ import { Nav, NavItem } from "shards-react";
 import './App.css';
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import Smurf from './components/Smurf';
 
 class App extends Component {
   constructor(props) {
@@ -62,6 +63,7 @@ class App extends Component {
 
         <Route exact path="/" render={props => (<Smurfs {...props} smurfs={this.state.smurfs} />)} />
         <Route exact path="/add-smurf" render={props => (<SmurfForm {...props} addSmurf={this.addSmurf} />)} />
+        <Route path="/smurf/:id" component={Smurf} />
       </div>
     );
   }
